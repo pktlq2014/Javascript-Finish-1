@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
   <link rel="stylesheet" href="./css/jquery.bxslider.css">
-  <title>Phone Shop</title>
+  <title>Computer Store</title>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
 
           <div class="nav__logo">
             <a href="/" class="scroll-link">
-              PHONE
+              <img src="./images/logostore.png" alt="">
             </a>
           </div>
 
@@ -53,20 +53,34 @@
 
           <div class="nav__menu">
             <div class="menu__top">
-              <span class="nav__category">PHONE</span>
+              <span class="nav__category">
+                <img src="./images/logostore.png" alt="">
+              </span>
               <a href="#" class="close__toggle">
                 <i class="fas fa-times"></i>
               </a>
             </div>
+
+
+
             <ul class="nav__list">
+              <li class="nav__item">
+                <a href="./index1.html" class="nav__link scroll-link">Blog</a>
+              </li>
               <li class="nav__item">
                 <a href="#header" class="nav__link scroll-link">Home</a>
               </li>
               <li class="nav__item">
-                <a href="#category" class="nav__link scroll-link">Category</a>
+                <a href="#products" class="nav__link scroll-link">Products</a>
               </li>
               <li class="nav__item">
-                <a href="#news" class="nav__link scroll-link">Blog</a>
+                <a href="#team" class="nav__link scroll-link">Team</a>
+              </li>
+              <li class="nav__item">
+                <a href="#question" class="nav__link scroll-link">Questions</a>
+              </li>
+              <li class="nav__item">
+                <a href="#news" class="nav__link scroll-link">News</a>
               </li>
               <li class="nav__item">
                 <a href="#contact" class="nav__link scroll-link">Contact</a>
@@ -75,24 +89,16 @@
           </div>
 
 
-
-          <div class="nav__icons">
-            <a href="#" class="icon__item">
-              <i class="fas fa-user"></i>
-            </a>
+          <div class="nav__right">
+            
 
 
-
-            <a href="#" class="icon__item">
-              <i class="fas fa-search"></i>
-            </a>
-
-
-
-            <a href="#" class="icon__item">
-              <i class="fas fa-shopping-cart"></i>
-              <span id="cart__total">0</span>
-            </a>
+            <div class="cart-btn">
+              <span class="nav-icon">
+                <i class="fas fa-cart-plus"></i>
+              </span>
+              <div class="cart-items">0</div>
+            </div>
           </div>
         </nav>
       </div>
@@ -1514,7 +1520,7 @@
   <!--New Section  -->
   <section class="section_news news" id="news">
     <div class="container">
-      <h1 class="primary__title--news">Store News</h1>
+      <h1 class="primary__title--news">Computer Store News</h1>
 
 
 
@@ -1751,7 +1757,7 @@
 
 
   <!-- Go To -->
-  <a href="#header" class="goto-top scroll-link">
+  <a href="#header" id="vidBtn" class="goto-top scroll-link">
     <i class="fas fa-arrow-up"></i>
   </a>
 
@@ -1853,7 +1859,7 @@
 
 
   <div id="typed-strings">
-    <p>Welcome to the<strong class="primary"> mobile world</strong></p>
+    <p>Welcome to the<strong class="primary"> computer store</strong></p>
     <p>customer<strong class="primary"> is god!!!</strong></p>
   </div>
   <!-- Glide Carousel Script -->
