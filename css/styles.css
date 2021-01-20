@@ -763,7 +763,6 @@ Collection
 */
 
 .section {
-  margin-bottom: 2rem;
   width: 100%;
   background-color: white;
   /* padding: 3rem 0; */
@@ -783,7 +782,7 @@ Collection
 
 .collection__container {
   width: 100%;
-  padding: 5rem 7rem;
+  background-color: red;
   display: flex;
   height: 100%;
   text-align: center;
@@ -840,8 +839,7 @@ Collection
   font-weight: 800;
 }
 /* có hover là phải dùng link vs visited kèm transition */
-.collection__content a:link,
-.collection__content a:visited {
+.collection__content a {
   font-weight: 700;
   display: inline-block;
   padding: 1rem 1.4rem;
@@ -1537,7 +1535,7 @@ Pop Up
   /* toàn bộ cái popup màu xám */
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 9999;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
   transform: scale(1);
 }
 
@@ -1547,9 +1545,9 @@ Pop Up
   left: 50%;
   width: 90%;
   margin: 0 auto;
-  height: 55rem;
+  height: 82.5vh;
+  padding: 0 5rem;
   transform: translate(-50%, -50%);
-  padding: 1.6rem;
   /* thằng cha có table thì thằng con sẽ có row or cell */
   display: table;
   overflow: hidden;
@@ -1586,7 +1584,7 @@ Pop Up
   display: table-cell;
   width: 50%;
   vertical-align: middle;
-  padding: 3rem 5rem;
+  padding: 2rem 2rem;
 }
 
 .popup-img__container {
@@ -1596,23 +1594,21 @@ Pop Up
 
 .popup-img__container img.popup__img {
   display: block;
-  width: 60rem;
-  height: 45rem;
-  max-width: 100%;
-  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 .right__content {
   text-align: center;
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
 }
 
 .right__content h1 {
   font-size: 3.5rem;
+  font-weight: 800;
   color: #000;
-  margin-bottom: 1.6rem;
 }
 
 .right__content h1 span {
@@ -1620,17 +1616,17 @@ Pop Up
 }
 
 .right__content p {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: var(--grey2);
-  margin-bottom: 1.6rem;
+  margin: 2rem 0 2.5rem 0;
 }
 
 .popup__form {
   width: 100%;
-  padding: 2rem 0;
+  padding: 1rem 0;
   /* khoảng cách giữa chữ ở trong vs background input */
   text-indent: 2rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 3rem;
   border-radius: 3rem;
   background-color: var(--primaryColor);
   border: none;
