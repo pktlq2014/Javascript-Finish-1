@@ -28,41 +28,98 @@ const categoryCenter = document.querySelector(".category__center");
 const displayProductItems = (items) => {
   let displayProduct = items.map(product =>
     ` 
+    <div class="glide__slide_products">
     <div class="product">
-    <div class="product__header">
-      <img src=${product.image} alt="product">
-    </div>
-    <div class="product__footer">
-      <h3>${product.title}</h3>
-      <div class="rating">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
+      <div class="product__header">
+        <img src="${product.image}" alt="product">
       </div>
-      <div class="product__price">
-        <h4>${product.price}</h4>
+
+
+
+      <div class="product__footer">
+        <h3>${product.title}</h3>
+
+
+
+
+        <div class="product__price">
+          <div class="home-product-item__price">
+            <span class="home-product-item__price-old">1200$</span>
+            <span class="home-product-item__price-current">${product.price}$</span>
+          </div>
+        </div>
+
+
+
+
+        <div class="home-product-item__origin">
+          <span class="home-product-item__brand">Laptop</span>
+          <span class="home-product-item__origin-name">China</span>
+        </div>
+
+
+
+        <div class="home-product-action">
+          <span class="home-product-item__like home-product-item__like--liked">
+            <i class="home-product-item__like-fill fa fa-heart"></i>
+            <i class="home-product-item__like-empty fa fa-heart-o"></i>
+          </span>
+
+
+
+
+          <div class="home-product-item__rating">
+            <i class="home-product-item__start--gold fa fa-star"></i>
+            <i class="home-product-item__start--gold fa fa-star"></i>
+            <i class="home-product-item__start--gold fa fa-star"></i>
+            <i class="home-product-item__start--gold fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+
+
+
+          <span class="home-product-item-sold">69 sold</span>
+        </div>
+
+
+
+
+        <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
       </div>
-      <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
+
+
+      <div class="home-product-item__favourite">
+        <i class="home-product-item__favourite-icon fas fa-check-circle"></i>
+        <span>favourite</span>
+      </div>
+
+
+
+      <div class="home-product-item__sale-off">
+        <span class="home-product-item__sale-off-percent">10%</span>
+        <span class="home-product-item__sale-off-label">SALE</span>
+      </div>
+
+
+
+      <ul>
+        <li>
+          <a data-tip="Quick View" data-place="left" href="#">
+            <i class="fas fa-eye"></i>
+          </a>
+        </li>
+        <li>
+          <a data-tip="Add To Wishlist" data-place="left" href="#">
+            <i class="fas fa-heart"></i>
+          </a>
+        </li>
+        <li>
+          <a data-tip="Add To Compare" data-place="left" href="#">
+            <i class="fas fa-undo"></i>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li>
-        <a data-tip="Quick View" data-place="left" href="#">
-          <i class="fas fa-eye"></i>
-        </a>
-      </li>
-      <li>
-        <a data-tip="Add To Wishlist" data-place="left" href="#">
-          <i class="fas fa-heart"></i>
-        </a>
-      </li>
-      <li>
-        <a data-tip="Add To Compare" data-place="left" href="#">
-          <i class="fas fa-undo"></i>
-        </a>
-      </li>
-    </ul>
   </div>
                   `
   );

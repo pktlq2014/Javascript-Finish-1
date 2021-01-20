@@ -640,6 +640,7 @@ Hero Area
 .glide__slide_products {
   text-align: center;
   display: flex;
+  width: 30rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -764,6 +765,7 @@ Collection
 
 .section {
   width: 100%;
+  margin-bottom: 2rem;
   background-color: white;
   /* padding: 3rem 0; */
 }
@@ -993,6 +995,7 @@ span.dot::before {
 /* phần product */
 .product {
   position: relative;
+  padding: 1rem 0 2rem;
   text-align: center;
 }
 
@@ -1485,20 +1488,22 @@ Category Center
 */
 .category__section {
   background-color: white;
-  padding-bottom: 5rem;
+  padding-bottom: 0.5rem;
 }
 .category__container {
   display: flex;
   align-items: center;
-  margin-top: 2rem;
+  margin: 5rem 0 5rem 2rem;
   justify-content: center;
 }
 .category__center {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 3rem 5rem;
+  gap: 1rem 1rem;
 }
-
+.category__center .glide__slide_products .product {
+  padding: 1.5rem 0 4rem 0;
+}
 @media only screen and (max-width: 999px) {
   .category__center {
     grid-template-columns: 1fr 1fr 1fr;
@@ -3066,7 +3071,7 @@ Cart Area Media Query
 /*insert 2*/
 .culinary-delight {
   background-color: white;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 /*finish insert 2*/
 
