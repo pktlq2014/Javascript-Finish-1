@@ -3522,7 +3522,7 @@ footer.footer .move-up span:hover{
 .work {
   margin-bottom: 2rem;
   padding: 2rem 0 2.5rem 0;
-  background-color: white;
+  background-color: white;  
 }
 /* bỏ khoảng trắng left+right hay nói cách khác ép sát các cột lại với nhau (trường hợp dùng boostrap) */
 .row.no-gutters [class*=col-] {
