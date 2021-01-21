@@ -558,7 +558,6 @@ Navigation Media Query
     padding: 0.4rem;
   }
 }
-
 /*
 ======================
 Hero Area
@@ -641,6 +640,19 @@ Hero Area
   text-align: center;
   display: flex;
   width: 30rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--black2);
+}
+.product_top {
+  margin: 0 5rem;
+}
+.glide__slide_products_top {
+  text-align: center;
+  display: flex;
+  margin-left: 1rem;
+  width: 29.25rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -1266,7 +1278,7 @@ span.dot::before {
 }
 .container_design {
   background-color: white;
-  padding: 5rem;
+  padding: 5rem 5rem 5rem 4.5rem;
 }
 .home-product-item__price{
 	display: flex;

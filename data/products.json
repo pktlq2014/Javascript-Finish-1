@@ -1,177 +1,249 @@
 {
     "products": [{
-            "id": 6,
-            "title": "Apple iPhone 11",
+            "id": 1,
+            "title": "Laptop Macbook 1",
             "image": "./images/laptop1.jpg",
             "price": 760,
-            "category": "Featured Products"
+            "priceOld" : 1453,
+            "origin" : "China",
+            "sold" : "46",
+            "category": "Macbook"
         },
 
         {
-            "id": 3,
-            "title": "Sony WH-CH510",
+            "id": 2,
+            "title": "Laptop Asus 1",
             "image": "./images/laptop2.jpg",
             "price": 265,
-            "category": "Special Products"
+            "priceOld" : 437,
+            "origin" : "England",
+            "sold" : "72",
+            "category": "Asus"
+        },
+        {
+            "id": 3,
+            "title": "Laptop HP 1",
+            "image": "./images/laptop3.jpg",
+            "price": 425,
+            "priceOld" : 896,
+            "origin" : "Singapore",
+            "sold" : 18,
+            "category": "HP"
         },
         {
             "id": 4,
-            "title": "Apple iPhone 11",
-            "image": "./images/laptop3.jpg",
-            "price": 850,
-            "category": "Special Products"
-        },
-        {
-            "id": 8,
-            "title": "Apple iPhone 11",
+            "title": "Laptop Lenovo 1",
             "image": "./images/laptop4.jpg",
             "price": 290,
-            "category": "Featured Products"
+            "priceOld" : 628,
+            "origin" : "Japan",
+            "sold" : 69,
+            "category": "Lenovo"
         },
         {
             "id": 5,
-            "title": "Sony WH-CH510",
+            "title": "Laptop Acer 1",
             "image": "./images/laptop5.jpg",
             "price": 250,
-            "category": "Special Products"
+            "priceOld" : 547,
+            "origin" : "America",
+            "sold" : 45,
+            "category": "Acer"
         },
+
+        {
+            "id": 6,
+            "title": "Laptop Dell 1",
+            "image": "./images/laptop6.jpg",
+            "price": 365,
+            "priceOld" : 761,
+            "origin" : "Vietnam",
+            "sold" : 88,
+            "category": "Dell"
+        },
+
 
         {
             "id": 7,
-            "title": "Sony WH-CH510",
-            "image": "./images/laptop6.jpg",
-            "price": 365,
-            "category": "Featured Products"
-        },
-
-
-        {
-            "id": 10,
-            "title": "Apple iPhone 11 Pro",
+            "title": "Laptop Dell 2",
             "image": "./images/laptop7.jpg",
             "price": 385,
-            "category": "Special Products"
+            "priceOld" : 739,
+            "origin" : "Vietnam",
+            "sold" : 42,
+            "category": "Dell"
         },
         {
-            "id": 11,
-            "title": "Sony WH-CH510",
+            "id": 8,
+            "title": "Laptop Acer 2",
             "image": "./images/laptop8.jpg",
             "price": 475,
-            "category": "Special Products"
-        },
-        {
-            "id": 13,
-            "title": "Apple iPhone 11",
-            "image": "./images/laptop9.jpg",
-            "price": 800,
-            "category": "Trending Products"
-        },
-        {
-            "id": 12,
-            "title": "Sony WH-CH510",
-            "image": "./images/laptop10.jpg",
-            "price": 850,
-            "category": "Special Products"
-        },
-
-        {
-            "id": 14,
-            "title": "Sony WH-CH510",
-            "image": "./images/laptop11.jpg",
-            "price": 360,
-            "category": "Trending Products"
+            "priceOld" : 946,
+            "origin" : "America",
+            "sold" : 11,
+            "category": "Acer"
         },
         {
             "id": 9,
-            "title": "Sony WH-CH510",
-            "image": "./images/laptop12.jpg",
-            "price": 320,
-            "category": "Special Products"
+            "title": "Laptop Lenovo 2",
+            "image": "./images/laptop9.jpg",
+            "price": 800,
+            "priceOld" : 1675,
+            "origin" : "Japan",
+            "sold" : 39,
+            "category": "Lenovo"
         },
         {
-            "id": 15,
-            "title": "Sony WH-CH510",
-            "image": "./images/laptop13.jpg",
-            "price": 305,
-            "category": "Trending Products"
-        },
-        {
-            "id": 16,
-            "title": "Samsung Galaxy",
-            "image": "./images/laptop14.jpg",
-            "price": 400,
-            "category": "Special Products"
-        },
-        {
-            "id": 17,
-            "title": "Samsung Galaxy",
-            "image": "./images/laptop15.jpg",
-            "price": 550,
-            "category": "Trending Products"
-        },
-        {
-            "id": 2,
-            "title": "Apple iPhone 11",
-            "image": "./images/laptop16.jpg",
-            "price": 300,
-            "category": "Special Products"
-        },
-        {
-            "id": 18,
-            "title": "Sony WH-CH510",
-            "image": "./images/laptop1.jpg",
-            "price": 630,
-            "category": "Trending Products"
-        },
-        {
-            "id": 20,
-            "title": "Samsung Galaxy",
-            "image": "./images/laptop2.jpg",
-            "price": 270,
-            "category": "Special Products"
-        },
-        {
-            "id": 19,
-            "title": "Sony WH-CH510",
-            "image": "./images/laptop3.jpg",
-            "price": 250,
-            "category": "Trending Products"
-        },
-        {
-            "id": 1,
-            "title": "Sony WH-CH510",
-            "image": "./images/laptop4.jpg",
-            "price": 265,
-            "category": "Special Products"
-        },
-        {
-            "id": 24,
-            "title": "Samsung Galaxy",
-            "image": "./images/laptop5.jpg",
-            "price": 500,
-            "category": "Featured Products"
-        },
-        {
-            "id": 21,
-            "title": "Sony WH-CH510",
-            "image": "./images/laptop6.jpg",
-            "price": 700,
-            "category": "Trending Products"
+            "id": 10,
+            "title": "Laptop HP 2",
+            "image": "./images/laptop10.jpg",
+            "price": 850,
+            "priceOld" : 1675,
+            "origin" : "Singapore",
+            "sold" : 64,
+            "category": "HP"
         },
 
         {
-            "id": 25,
-            "title": "Samsung Galaxy",
-            "image": "./images/laptop7.jpg",
-            "price": 450,
-            "category": "Special Products"
+            "id": 11,
+            "title": "Laptop Asus 2",
+            "image": "./images/laptop11.jpg",
+            "price": 360,
+            "priceOld" : 745,
+            "origin" : "England",
+            "sold" : 74,
+            "category": "Asus"
+        },
+        {
+            "id": 12,
+            "title": "Laptop Macbook 2",
+            "image": "./images/laptop12.jpg",
+            "price": 320,
+            "priceOld" : 716,
+            "origin" : "China",
+            "sold" : 55,
+            "category": "Macbook"
+        },
+        {
+            "id": 13,
+            "title": "Laptop Macbook 3",
+            "image": "./images/laptop13.jpg",
+            "price": 305,
+            "priceOld" : 643,
+            "origin" : "China",
+            "sold" : 16,
+            "category": "Macbook"
+        },
+        {
+            "id": 14,
+            "title": "Laptop Asus 3",
+            "image": "./images/laptop14.jpg",
+            "price": 400,
+            "priceOld" : 889,
+            "origin" : "England",
+            "sold" : 32,
+            "category": "Asus"
+        },
+        {
+            "id": 15,
+            "title": "Laptop HP 3",
+            "image": "./images/laptop15.jpg",
+            "price": 550,
+            "priceOld" : 1249,
+            "origin" : "Singapore",
+            "sold" : 77,
+            "category": "HP"
+        },
+        {
+            "id": 16,
+            "title": "Laptop Lenovo 3",
+            "image": "./images/laptop16.jpg",
+            "price": 300,
+            "priceOld" : 638,
+            "origin" : "Japan",
+            "sold" : 49,
+            "category": "Lenovo"
+        },
+        {
+            "id": 17,
+            "title": "Laptop Acer 3",
+            "image": "./images/laptop1.jpg",
+            "price": 630,
+            "priceOld" : 1374,
+            "origin" : "America",
+            "sold" : 60,
+            "category": "Acer"
+        },
+        {
+            "id": 18,
+            "title": "Laptop Dell 3",
+            "image": "./images/laptop2.jpg",
+            "price": 270,
+            "priceOld" : 594,
+            "origin" : "Vietnam",
+            "sold" : 84,
+            "category": "Dell"
+        },
+        {
+            "id": 19,
+            "title": "Laptop Dell 4",
+            "image": "./images/laptop3.jpg",
+            "price": 250,
+            "priceOld" : 577,
+            "origin" : "Vietnam",
+            "sold" : 72,
+            "category": "Dell"
+        },
+        {
+            "id": 20,
+            "title": "Laptop Acer 4",
+            "image": "./images/laptop4.jpg",
+            "price": 265,
+            "priceOld" : 514,
+            "origin" : "America",
+            "sold" : 72,
+            "category": "Acer"
+        },
+        {
+            "id": 21,
+            "title": "Laptop Lenovo 4",
+            "image": "./images/laptop5.jpg",
+            "price": 500,
+            "priceOld" : 1024,
+            "origin" : "Japan",
+            "sold" : 36,
+            "category": "Lenovo"
         },
         {
             "id": 22,
-            "title": "Samsung Galaxy",
+            "title": "Laptop HP 4",
+            "image": "./images/laptop6.jpg",
+            "price": 700,
+            "priceOld" : 1542,
+            "origin" : "Singapore",
+            "sold" : 99,
+            "category": "HP"
+        },
+
+        {
+            "id": 23,
+            "title": "Laptop Asus 4",
+            "image": "./images/laptop7.jpg",
+            "price": 450,
+            "priceOld" : 984,
+            "origin" : "England",
+            "sold" : 85,
+            "category": "Asus"
+        },
+        {
+            "id": 24,
+            "title": "Laptop Macbook 4",
             "image": "./images/laptop8.jpg",
             "price": 460,
-            "category": "Trending Products"
+            "priceOld" : 948,
+            "origin" : "China",
+            "sold" : 44,
+            "category": "Macbook"
         }
     ]
 }
