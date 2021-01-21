@@ -85,7 +85,7 @@ const displayProductItems = (items) => {
 
 
 
-        <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
+        <a><button type="submit" class="product__btn">Add To Cart</button></a>
       </div>
 
 
@@ -105,17 +105,17 @@ const displayProductItems = (items) => {
 
       <ul>
         <li>
-          <a data-tip="Quick View" data-place="left" href="#">
+          <a data-tip="Quick View" data-place="left">
             <i class="fas fa-eye"></i>
           </a>
         </li>
         <li>
-          <a data-tip="Add To Wishlist" data-place="left" href="#">
+          <a data-tip="Add To Wishlist" data-place="left">
             <i class="fas fa-heart"></i>
           </a>
         </li>
         <li>
-          <a data-tip="Add To Compare" data-place="left" href="#">
+          <a data-tip="Add To Compare" data-place="left">
             <i class="fas fa-undo"></i>
           </a>
         </li>
@@ -191,7 +191,7 @@ const displayProductItemsTop = (items) => {
 
 
 
-        <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
+        <a><button type="submit" class="product__btn">Add To Cart</button></a>
       </div>
 
 
@@ -211,17 +211,17 @@ const displayProductItemsTop = (items) => {
 
       <ul>
         <li>
-          <a data-tip="Quick View" data-place="left" href="#">
+          <a data-tip="Quick View" data-place="left">
             <i class="fas fa-eye"></i>
           </a>
         </li>
         <li>
-          <a data-tip="Add To Wishlist" data-place="left" href="#">
+          <a data-tip="Add To Wishlist" data-place="left">
             <i class="fas fa-heart"></i>
           </a>
         </li>
         <li>
-          <a data-tip="Add To Compare" data-place="left" href="#">
+          <a data-tip="Add To Compare" data-place="left">
             <i class="fas fa-undo"></i>
           </a>
         </li>
