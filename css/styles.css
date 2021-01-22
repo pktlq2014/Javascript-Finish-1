@@ -1710,6 +1710,24 @@ Pop Up
   height: 1.7rem;
 }
 
+.popup__close_login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 1.5rem;
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup__close_login i {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
 .popup__left {
   display: table-cell;
   width: 50%;
@@ -1801,6 +1819,7 @@ Pop Up
 .login_parent {
   position: fixed;
   left: 50%;
+  display: none;
   transform: translateX(-50%);
   top: 0;
   background-color: rgba(0,0,0,0.3);
@@ -1808,6 +1827,9 @@ Pop Up
   height: 100%;
   transition: all .3s ease-in-out;
   z-index: 99999;
+}
+.show {
+  display: block;
 }
 .login_child {
   margin: 0 7.5rem;
@@ -1819,6 +1841,8 @@ Pop Up
 }
 .b-wrapper .popup__close {
   top: 0;
+  z-index: 99999999999;
+  position: absolute;
   margin: 2rem;
   right: 0;
 }
@@ -1960,6 +1984,17 @@ Go Up
   }
 
   .popup__close i {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .popup__close_login {
+    top: 1rem;
+    right: 1rem;
+    padding: 1.3rem;
+  }
+
+  .popup__close_login i {
     width: 1.4rem;
     height: 1.4rem;
   }
