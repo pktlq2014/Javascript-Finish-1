@@ -2369,9 +2369,23 @@ Footer
   
 }
 
+.footer-top__box {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
 .footer__top {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  color: var(--grey3);
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
   color: var(--grey3);
 }
 
