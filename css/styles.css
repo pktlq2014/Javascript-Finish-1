@@ -934,27 +934,68 @@ Latest Products
 ======================
 */
 .name_filter {
-  width:20vw;
+  width:10%;
   font-weight: 800;
   font-size: 2rem;
   text-align: center;
+}
+input {
+  text-indent: 1rem;
+  padding: 0.5rem 0;
+  width: 30rem;
+}
+.search input:focus {
+	outline: 0;
+	border-color: var(--secondary-font);
+}
+.search {
+
+}
+input:invalid ~ span:after {
+  content: '✖';
+  padding-left: 1rem;
+  text-align: center;
+  margin-top: 0.25rem;
+  font-size: 2rem;
+  font-weight: 800;
+  position: absolute;
+}
+
+input:valid ~ span:after {
+  content: '✓';
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+  text-align: center;
+  font-weight: 800;
+  font-size: 2rem;
+  position: absolute;
 }
 .filter .origin {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   text-align: center;
-  width: 80vw;
+  width: 90%;
   margin-left: 0;
 }
 .filter .category {
   display: flex;
-  margin-top: 0;
   margin-left: 0;
   justify-content: flex-start;
-  align-items: flex-start;
-  text-align: center;
+  align-items: center;
 }
+.category .section__titles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0;
+} */
 .filter .price {
   display: flex;
   margin-bottom: 0;
@@ -965,7 +1006,7 @@ Latest Products
 }
 .title__container {
   display: flex;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   justify-content: space-around;
   background-color: var(--primaryColor);
