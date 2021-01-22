@@ -23,20 +23,41 @@ window.addEventListener("DOMContentLoaded", async () => {
   displayProductItemsTop(products);
   displayProductItemsSearch(products);
 });
-const displayProductItemsSearch = (products) => {
-  document.getElementById("mySearch").addEventListener("keyup", function () {
-    // (C) GET THE SEARCH TERM
-    var search = this.value.toLowerCase();
-    console.log(search);
-    products.filter(product => {
-      var title = product.title.toLowerCase();
-      console.log(title);
-      if (title.indexOf(search) !== -1) {
-        displayProductItems(products);
-      }
-    });
-  });
+var render_lists = function (lists) {
+  displayProductItems(lists);
 }
+var mySearch = document.getElementById('mySearch');
+const displayProductItemsSearch = (products) => {
+  var filterUsers = function (event) {
+    var keyword = mySearch.value.toLowerCase();
+    var filtered_users = products.filter(function (user) {
+      user = user.title.toLowerCase();
+      return user.indexOf(keyword) > -1;
+    });
+    render_lists(filtered_users);
+  }
+  mySearch.addEventListener('keyup', filterUsers);
+}
+
+//  const displayProductItemsSearch = (products) => {
+// const glide__slide_products = document.querySelectorAll(".glide__slide_products");
+// document.getElementById("mySearch").addEventListener("keyup", function () {
+//   // (C) GET THE SEARCH TERM
+
+//   var search = this.value.toLowerCase();
+//   console.log(search);
+//   products.forEach(product => {
+//     var title = product.title.toLowerCase();
+//     console.log(title);
+//     if (title.indexOf(search) !== -1) {
+//       glide__slide_products.classList.remove("hidden");
+//     }
+//     else {
+//       glide__slide_products.classList.add("hidden");
+//     }
+//   });
+// });
+//  }
 
 const latest_center = document.querySelector(".latest-center");
 const categoryCenter = document.querySelector(".category__center");

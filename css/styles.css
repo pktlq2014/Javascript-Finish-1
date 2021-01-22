@@ -948,8 +948,14 @@ input {
 	outline: 0;
 	border-color: var(--secondary-font);
 }
+.show {
+  display: block;
+}
+.hidden {
+  display: none;
+}
 .search {
-
+ 
 }
 input:invalid ~ span:after {
   content: '✖';
@@ -984,8 +990,9 @@ input:valid ~ span:after {
   justify-content: flex-start;
   align-items: center;
 }
-.category .section__titles {
+.category .section__titles_parent {
   display: flex;
+  margin-right: 2rem;
   justify-content: center;
   align-items: center;
 }
@@ -1003,6 +1010,11 @@ input:valid ~ span:after {
   margin-left: 0;
   align-items: flex-start;
   text-align: center;
+}
+.filter .price h1,
+.filter .category h1,
+.filter .origin h1 {
+  font-size: 1.75rem;
 }
 .title__container {
   display: flex;
