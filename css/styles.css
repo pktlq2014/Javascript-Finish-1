@@ -1798,7 +1798,30 @@ Pop Up
   opacity: 0;
   visibility: hidden;
 }
-
+.login_parent {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  background-color: rgba(0,0,0,0.3);
+  width: 100%;
+  height: 100%;
+  transition: all .3s ease-in-out;
+  z-index: 99999;
+}
+.login_child {
+  margin: 0 7.5rem;
+  position: relative;
+  margin-top: 1rem;
+}
+.b-wrapper {
+  position: relative;
+}
+.b-wrapper .popup__close {
+  top: 0;
+  margin: 2rem;
+  right: 0;
+}
 /*
 ======================
 Go Up
