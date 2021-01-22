@@ -97,7 +97,7 @@ const displayProductItems = (items) => {
 
 
       <div class="home-product-item__sale-off">
-        <span class="home-product-item__sale-off-percent">10%</span>
+        <span class="home-product-item__sale-off-percent">${product.sale}%</span>
         <span class="home-product-item__sale-off-label">SALE</span>
       </div>
 
@@ -237,6 +237,11 @@ const displayProductItemsTop = (items) => {
 Filtering
 =============
  */
+const eitherSort = (arr = []) => {
+  const sorter = (a, b) => {
+    return +a.price - +b.price;
+  };
+};
 
 const filterBtn = document.querySelectorAll(".filter-btn");
 const categoryContainer = document.getElementById("category");
@@ -260,14 +265,43 @@ if (categoryContainer) {
 
       // Load Products
       let menuCategory = products.filter(product => {
+        if (product.origin === id) {
+          return product;
+        }
         if (product.category === id) {
           return product;
         }
+        if (id === "609" && product.price < 700) {
+          return product;
+        }
+        if (id === "701" && product.price >= 700) {
+          return product;
+        }
+        if (id === "15" && product.sale === "15") {
+          return product;
+        }
       });
+      // if (id === "low") {
+
+      //   return news;
+      // }
       // thêm điều kiện id = all product vì trong product k có loại all product
       if (id === "All Products") {
         displayProductItems(products);
-      } else {
+      }
+      else if (id === "low") {
+        products.sort(function (a, b) {
+          return a.price - b.price;
+        });
+        displayProductItems(products);
+      }
+      else if (id === "high") {
+        products.sort(function (a, b) {
+          return b.price - a.price;
+        });
+        displayProductItems(products);
+      }
+      else {
         displayProductItems(menuCategory);
       }
     }

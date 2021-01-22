@@ -933,10 +933,41 @@ Collection Media Query
 Latest Products
 ======================
 */
+.name_filter {
+  width:20vw;
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
+}
+.filter .origin {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: center;
+  width: 80vw;
+  margin-left: 0;
+}
+.filter .category {
+  display: flex;
+  margin-top: 0;
+  margin-left: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: center;
+}
+.filter .price {
+  display: flex;
+  margin-bottom: 0;
+  justify-content: flex-start;
+  margin-left: 0;
+  align-items: flex-start;
+  text-align: center;
+}
 .title__container {
   display: flex;
+  width: 100vw;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: var(--primaryColor);
 }
 
