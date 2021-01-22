@@ -1684,13 +1684,8 @@ Pop Up
 
 .popup__content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  margin: 0 auto;
-  height: 82.5vh;
-  padding: 0 5rem;
-  transform: translate(-50%, -50%);
+  margin: 0 9rem 0 9rem;
+  margin-top: 7.5rem;
   /* thằng cha có table thì thằng con sẽ có row or cell */
   display: table;
   overflow: hidden;
