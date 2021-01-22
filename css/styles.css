@@ -1582,6 +1582,47 @@ Latest Products Media Query
 Category Center
 ======================
 */
+/*pagination*/
+.home-product__pagination{
+	margin: 6rem 1rem 2rem 1rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center	;
+}
+.category__container .pagination{
+	display: flex;
+	list-style: none;
+  align-items: center;
+	justify-content: center;
+}
+.pagination-item{
+	background-color: #F5F5F5;
+  display: flex;
+  cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 2rem;
+}
+.pagination-item__link{
+	text-decoration: none;
+	display: block;
+  height: 40px;
+	min-width: 40px;
+	text-align: center;
+	font-size: 2rem;
+	line-height: 30px;
+	border-radius: 2px;
+}
+.pagination-item-active .pagination-item__link{
+	color: #FFF;
+	background-color: rgb(238, 75, 43);
+}
+
+
+
+
+
 .category__section {
   background-color: white;
   padding-bottom: 0.5rem;
@@ -1589,6 +1630,7 @@ Category Center
 .category__container {
   display: flex;
   align-items: center;
+  flex-direction: column;
   margin: 5rem 0 5rem 2rem;
   justify-content: center;
 }
