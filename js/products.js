@@ -1,3 +1,10 @@
+const latest_center = document.querySelector(".latest-center");
+const categoryCenter = document.querySelector(".category__center");
+const filterBtn = document.querySelectorAll(".filter-btn");
+const categoryContainer = document.getElementById("category");
+
+
+
 const getProducts = async () => {
   try {
     const results = await fetch("./../data/products.json");
@@ -8,22 +15,24 @@ const getProducts = async () => {
     console.log(err);
   }
 };
-
 /*
 =============
 Load Category Products
 =============
  */
+document.addEventListener("DOMContentLoaded", () => {
+  getProducts().then(products => {
+    console.log(products);
+    displayProductItems(products);
+    displayProductItemsTop(products);
+    displayProductItemsSearch(products);
+  }).then(() => {
 
-
-window.addEventListener("DOMContentLoaded", async () => {
-  const products = await getProducts();
-  console.log(products);
-  displayProductItems(products);
-  displayProductItemsTop(products);
-  displayProductItemsSearch(products);
-  
+  });
 });
+
+
+
 var render_lists = function (lists) {
   displayProductItems(lists);
 }
@@ -60,8 +69,7 @@ const displayProductItemsSearch = (products) => {
 // });
 //  }
 
-const latest_center = document.querySelector(".latest-center");
-const categoryCenter = document.querySelector(".category__center");
+
 const displayProductItems = (items) => {
   let displayProduct = items.map(product =>
     ` 
@@ -274,8 +282,7 @@ Filtering
 =============
  */
 
-const filterBtn = document.querySelectorAll(".filter-btn");
-const categoryContainer = document.getElementById("category");
+
 // nếu tồn tại cái class này
 if (categoryContainer) {
   categoryContainer.addEventListener("click", async e => {
