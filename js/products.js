@@ -2,6 +2,7 @@ const latest_center = document.querySelector(".latest-center");
 const categoryCenter = document.querySelector(".category__center");
 const filterBtn = document.querySelectorAll(".filter-btn");
 const categoryContainer = document.getElementById("category");
+const mySearch = document.getElementById('mySearch');
 
 
 
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     displayProductItems(products);
     displayProductItemsTop(products);
     displayProductItemsSearch(products);
+    displayProductItemsFilter(products);
   }).then(() => {
 
   });
@@ -36,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 var render_lists = function (lists) {
   displayProductItems(lists);
 }
-var mySearch = document.getElementById('mySearch');
 const displayProductItemsSearch = (products) => {
   var filterUsers = function (event) {
     var keyword = mySearch.value.toLowerCase();
@@ -49,25 +50,6 @@ const displayProductItemsSearch = (products) => {
   mySearch.addEventListener('keyup', filterUsers);
 }
 
-//  const displayProductItemsSearch = (products) => {
-// const glide__slide_products = document.querySelectorAll(".glide__slide_products");
-// document.getElementById("mySearch").addEventListener("keyup", function () {
-//   // (C) GET THE SEARCH TERM
-
-//   var search = this.value.toLowerCase();
-//   console.log(search);
-//   products.forEach(product => {
-//     var title = product.title.toLowerCase();
-//     console.log(title);
-//     if (title.indexOf(search) !== -1) {
-//       glide__slide_products.classList.remove("hidden");
-//     }
-//     else {
-//       glide__slide_products.classList.add("hidden");
-//     }
-//   });
-// });
-//  }
 
 
 const displayProductItems = (items) => {
@@ -175,6 +157,9 @@ const displayProductItems = (items) => {
     categoryCenter.innerHTML = displayProduct;
   }
 };
+
+
+
 const displayProductItemsTop = (items) => {
   let result = '';
   items.forEach(item => {
@@ -276,74 +261,75 @@ const displayProductItemsTop = (items) => {
   });
   latest_center.innerHTML = result;
 }
+
+
+
 /*
 =============
 Filtering
 =============
  */
-
-
-// nếu tồn tại cái class này
-if (categoryContainer) {
-  categoryContainer.addEventListener("click", async e => {
-    const target = e.target.closest(".section__title");
-    if (!target) return;
-    // lấy dc data-id khi click vào
-    const id = target.dataset.id;
-    // chứa array của all product
-    const products = await getProducts();
-    // nếu user click vào và đã lấy dc data-id
-    if (id) {
-      // hiển thị hiệu ứng người dùng đang chọn cái nào thôi
-      // hay nói cách khác là trạng thái btn lọc
-      Array.from(filterBtn).forEach(btn => {
-        btn.classList.remove("active");
-      });
-      target.classList.add("active");
-
-      // Load Products
-      let menuCategory = products.filter(product => {
-        if (product.origin === id) {
-          return product;
-        }
-        if (product.category === id) {
-          return product;
-        }
-        if (id === "609" && product.price < 700) {
-          return product;
-        }
-        if (id === "701" && product.price >= 700) {
-          return product;
-        }
-        if (id === "15" && product.sale === "15") {
-          return product;
-        }
-      });
-      // if (id === "low") {
-
-      //   return news;
-      // }
-      // thêm điều kiện id = all product vì trong product k có loại all product
-      if (id === "All Products") {
-        displayProductItems(products);
-      }
-      else if (id === "low") {
-        products.sort(function (a, b) {
-          return a.price - b.price;
+const displayProductItemsFilter = (products) => {
+  // nếu tồn tại cái class này
+  if (categoryContainer) {
+    categoryContainer.addEventListener("click", async e => {
+      const target = e.target.closest(".section__title");
+      if (!target) return;
+      // lấy dc data-id khi click vào
+      const id = target.dataset.id;
+      // nếu user click vào và đã lấy dc data-id
+      if (id) {
+        // hiển thị hiệu ứng người dùng đang chọn cái nào thôi
+        // hay nói cách khác là trạng thái btn lọc
+        Array.from(filterBtn).forEach(btn => {
+          btn.classList.remove("active");
         });
-        displayProductItems(products);
-      }
-      else if (id === "high") {
-        products.sort(function (a, b) {
-          return b.price - a.price;
+        target.classList.add("active");
+
+        // Load Products
+        let menuCategory = products.filter(product => {
+          if (product.origin === id) {
+            return product;
+          }
+          if (product.category === id) {
+            return product;
+          }
+          if (id === "609" && product.price < 700) {
+            return product;
+          }
+          if (id === "701" && product.price >= 700) {
+            return product;
+          }
+          if (id === "15" && product.sale === "15") {
+            return product;
+          }
         });
-        displayProductItems(products);
+        // if (id === "low") {
+
+        //   return news;
+        // }
+        // thêm điều kiện id = all product vì trong product k có loại all product
+        if (id === "All Products") {
+          displayProductItems(products);
+        }
+        else if (id === "low") {
+          products.sort(function (a, b) {
+            return a.price - b.price;
+          });
+          displayProductItems(products);
+        }
+        else if (id === "high") {
+          products.sort(function (a, b) {
+            return b.price - a.price;
+          });
+          displayProductItems(products);
+        }
+        else {
+          displayProductItems(menuCategory);
+        }
       }
-      else {
-        displayProductItems(menuCategory);
-      }
-    }
-  });
+    });
+  }
 }
 /*
 =============
