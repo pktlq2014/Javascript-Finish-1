@@ -3,6 +3,10 @@ const categoryCenter = document.querySelector(".category__center");
 const filterBtn = document.querySelectorAll(".filter-btn");
 const categoryContainer = document.getElementById("category");
 const mySearch = document.getElementById('mySearch');
+//const new__price_total = document.querySelector(".new__price_total");
+const cart_items = document.querySelector(".cart-items"); // đây
+let cart = [];
+let buttonsDOM = [];
 
 
 
@@ -16,22 +20,6 @@ const getProducts = async () => {
     console.log(err);
   }
 };
-/*
-=============
-Load Category Products
-=============
- */
-document.addEventListener("DOMContentLoaded", () => {
-  getProducts().then(products => {
-    console.log(products);
-    displayProductItems(products);
-    displayProductItemsTop(products);
-    displayProductItemsSearch(products);
-    displayProductItemsFilter(products);
-  }).then(() => {
-
-  });
-});
 
 
 
@@ -53,108 +41,107 @@ const displayProductItemsSearch = (products) => {
 
 
 const displayProductItems = (items) => {
-  let displayProduct = items.map(product =>
-    ` 
-    <div class="glide__slide_products">
-    <div class="product">
-      <div class="product__header">
-        <img src="${product.image}" alt="product">
-      </div>
-
-
-
-      <div class="product__footer">
-        <h3>${product.title}</h3>
-
-
-
-
-        <div class="product__price">
-          <div class="home-product-item__price">
-            <span class="home-product-item__price-old">${product.priceOld}$</span>
-            <span class="home-product-item__price-current">${product.price}$</span>
+  let result = '';
+  items.forEach(product => {
+    result += `
+      <div class="glide__slide_products">
+      <div class="product">
+        <div class="product__header">
+          <img src="${product.image}" alt="product">
+        </div>
+  
+  
+  
+        <div class="product__footer">
+          <h3>${product.title}</h3>
+  
+  
+  
+  
+          <div class="product__price">
+            <div class="home-product-item__price">
+              <span class="home-product-item__price-old">${product.priceOld}$</span>
+              <span class="home-product-item__price-current">${product.price}$</span>
+            </div>
           </div>
-        </div>
-
-
-
-
-        <div class="home-product-item__origin">
-          <span class="home-product-item__brand">${product.origin}</span>
-          <span class="home-product-item__origin-name">${product.category}</span>
-        </div>
-
-
-
-        <div class="home-product-action">
-          <span class="home-product-item__like home-product-item__like--liked">
-            <i class="home-product-item__like-fill fa fa-heart"></i>
-            <i class="home-product-item__like-empty fa fa-heart-o"></i>
-          </span>
-
-
-
-
-          <div class="home-product-item__rating">
-            <i class="home-product-item__start--gold fa fa-star"></i>
-            <i class="home-product-item__start--gold fa fa-star"></i>
-            <i class="home-product-item__start--gold fa fa-star"></i>
-            <i class="home-product-item__start--gold fa fa-star"></i>
-            <i class="fa fa-star"></i>
+  
+  
+  
+  
+          <div class="home-product-item__origin">
+            <span class="home-product-item__brand">${product.origin}</span>
+            <span class="home-product-item__origin-name">${product.category}</span>
           </div>
-
-
-
-          <span class="home-product-item-sold">${product.sold} sold</span>
+  
+  
+  
+          <div class="home-product-action">
+            <span class="home-product-item__like home-product-item__like--liked">
+              <i class="home-product-item__like-fill fa fa-heart"></i>
+              <i class="home-product-item__like-empty fa fa-heart-o"></i>
+            </span>
+  
+  
+  
+  
+            <div class="home-product-item__rating">
+              <i class="home-product-item__start--gold fa fa-star"></i>
+              <i class="home-product-item__start--gold fa fa-star"></i>
+              <i class="home-product-item__start--gold fa fa-star"></i>
+              <i class="home-product-item__start--gold fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+  
+  
+  
+            <span class="home-product-item-sold">${product.sold} sold</span>
+          </div>
+  
+  
+  
+  
+          <button class="product__btn" data-id=${product.id}>Add To Cart</button>
         </div>
-
-
-
-
-        <a><button type="submit" class="product__btn">Add To Cart</button></a>
+  
+  
+        <div class="home-product-item__favourite">
+          <i class="home-product-item__favourite-icon fas fa-check-circle"></i>
+          <span>favourite</span>
+        </div>
+  
+  
+  
+        <div class="home-product-item__sale-off">
+          <span class="home-product-item__sale-off-percent">${product.sale}%</span>
+          <span class="home-product-item__sale-off-label">SALE</span>
+        </div>
+  
+  
+  
+        <ul>
+          <li>
+            <a data-tip="Quick View" data-place="left">
+              <i class="fas fa-eye"></i>
+            </a>
+          </li>
+          <li>
+            <a data-tip="Add To Wishlist" data-place="left">
+              <i class="fas fa-heart"></i>
+            </a>
+          </li>
+          <li>
+            <a data-tip="Add To Compare" data-place="left">
+              <i class="fas fa-undo"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-
-
-      <div class="home-product-item__favourite">
-        <i class="home-product-item__favourite-icon fas fa-check-circle"></i>
-        <span>favourite</span>
-      </div>
-
-
-
-      <div class="home-product-item__sale-off">
-        <span class="home-product-item__sale-off-percent">${product.sale}%</span>
-        <span class="home-product-item__sale-off-label">SALE</span>
-      </div>
-
-
-
-      <ul>
-        <li>
-          <a data-tip="Quick View" data-place="left">
-            <i class="fas fa-eye"></i>
-          </a>
-        </li>
-        <li>
-          <a data-tip="Add To Wishlist" data-place="left">
-            <i class="fas fa-heart"></i>
-          </a>
-        </li>
-        <li>
-          <a data-tip="Add To Compare" data-place="left">
-            <i class="fas fa-undo"></i>
-          </a>
-        </li>
-      </ul>
     </div>
-  </div>
-                  `
-  );
-
-  displayProduct = displayProduct.join("");
+      `
+  });
   // có tồn tại cái class này
   if (categoryCenter) {
-    categoryCenter.innerHTML = displayProduct;
+    categoryCenter.innerHTML = result;
   }
 };
 
@@ -220,7 +207,7 @@ const displayProductItemsTop = (items) => {
 
 
 
-        <a><button type="submit" class="product__btn">Add To Cart</button></a>
+        <button class="product__btn" data-id=${item.id}>Add To Cart</button>
       </div>
 
 
@@ -264,11 +251,6 @@ const displayProductItemsTop = (items) => {
 
 
 
-/*
-=============
-Filtering
-=============
- */
 const displayProductItemsFilter = (products) => {
   // nếu tồn tại cái class này
   if (categoryContainer) {
@@ -330,6 +312,140 @@ const displayProductItemsFilter = (products) => {
       }
     });
   }
+}
+
+
+const getBagButtons = () => {
+  // id của nút add to cart
+  const buttons = [...document.querySelectorAll(".product__btn")];
+  console.log("test 5: ");
+  console.log(buttons);
+  // buttonsDOM là 1 array rỗng
+  // gán array chứa các class của các button này vào array rỗng
+  buttonsDOM = buttons;
+  buttons.forEach(button => {
+    // lấy ra dataset-id của 8 cái button 
+    var id = button.dataset.id;
+    console.log("test 6: " + id);
+    // cart cũng là 1 array rỗng
+    console.log("test 7: ");
+    console.log(cart);
+    // tìm trong cái array cart (hay nói cách khác là trong giỏ hàng) 
+    // này xem có sản phẩm nào có id dataset (id của button) 
+    // giống với cái id của người dùng click thêm vào giỏ hàng
+    // hay không
+    // nếu có thì trả về duy nhất 1 object thỏa điều kiện đầu tiên
+    let inCart = cart.find(item => item.id === id);
+    console.log("test 8: ");
+    console.log(inCart);
+    // sản phẩm đã được thêm vào giỏ hàng
+    // và id của sản phẩm tồn tại
+    if (inCart) {
+      button.innerText = "In Cart";
+      button.disabled = true;
+    }
+    // các sản phẩm chưa được thêm vào giỏ hàng
+    // khi người dùng click vào 1 sản phẩm
+    // thì đã lấy được 1 id dataset rồi
+    button.addEventListener("click", event => {
+      event.target.innerText = "In Cart";
+      // khi users click vào sản phẩm này 
+      // nghĩa là sản phẩm này sẽ được thêm vào trong giỏ hàng
+      // thì sau đó user sẽ không thể thêm sp này vào 
+      // giỏ hàng được nữa, vì vậy phải vô hiệu
+      // hóa cái button của sản phẩm này sau khi 
+      // thêm vào giỏ hàng xong
+      event.target.disabled = true;
+
+
+      // get product from products
+      // let cartItem = Storage.getProduct(id);
+      // mỗi lần người dùng click vào 1 sp
+      // sẽ lấy ra được 1 object sản phẩm người
+      // dùng vừa click vào từ 8 object sản phẩm
+      // trên storage, thêm vào 1 thuộc tính mới
+      // lấy ra được 1 object sp lấy từ storage về thông qua id
+      var cartItem = { ...getProduct(id), amount: 1 };
+      console.log("test 9: ");
+      console.log(cartItem);
+      // add product to the cart
+      // cart lúc này vẫn đang là rỗng (tính từ giỏ hàng đang là 0)
+      // đưa cái object sp người dùng vừa click vào array cart
+      //cart = [...cart, cartItem];
+      cart.push(cartItem);
+      console.log("test 10: ");
+      console.log(cart);
+      // save cart in local storage
+      // mỗi lần như vậy sẽ lưu 1 object sp người dùng
+      // vừa click lên storage
+      // lưu lên store để khi refresh lại
+      // lấy dữ liệu giỏ hàng từ store về
+      // để lưu lại sản phẩm mà người dùng
+      // đã thêm vào giỏ hàng
+      saveCart(cart);
+      // set cart values
+      setCartValues(cart);
+      // display cart item
+      // để vào đây mỗi lần 1 object sp
+      // mà người dùng vừa thêm vào giỏ hàng 
+      // mỗi lần người dùng click thêm sp vào
+      // giỏ hàng, nó sẽ tạo ra 1 thẻ div
+      // sau đó thêm vào làm con của cart-content
+      addCartItem(cartItem);
+      // show the cart
+      // this.showCart();
+    });
+  });
+}
+
+
+
+// item này chứa array các object sản phẩm mà người dùng vừa click
+setCartValues = (item) => {
+  // thằng này là tổng tiền all sp
+  var itemsTotal = 0;
+  // thằng này là tổng số lượng hiển thị trong giỏ hàng
+  var tempTotal = 0;
+  // cart.forEach(item => {
+  //     tempTotal += item.price * item.amount;
+  //     itemsTotal += item.amount;
+  // });
+  // array cart lúc này đã có object sp người dùng vừa click
+  // mỗi 1 sp trong cart or trong giỏ hàng sẽ tính toán 1 lần
+  var total = cart.reduce((tempInitial, value) => {
+    //tempInitial += value.price * value.amount;
+    itemsTotal += value.amount;
+    // return tempInitial;
+    return tempInitial + value.price * value.amount;
+  }, 0);
+  tempTotal = total;
+  console.log(itemsTotal);
+  // tổng số lương all sp hiển thị trong giỏ hàng t in ra nè
+  cart_items.innerText = itemsTotal;
+  //console.log(parseFloat(tempTotal.toFix(2)));
+  saveProductsTotal(parseFloat(tempTotal.toFixed(2)));
+}
+const addCartItem = (item) => {
+  const div = document.createElement('div');
+  div.classList.add('cart-item');
+  div.innerHTML = `
+  <img src="${item.image}" alt="product" class=""/>
+
+
+  <div class="item-list">
+      <h4 class="">${item.title}</h4>
+      <h5 class="">$${item.price}</h5>
+      <span class="remove-item" data-id=${item.id}>remove</span>
+  </div>
+
+
+  <div class="item-value">
+      <i class="fas fa-chevron-up" data-id=${item.id}></i>
+      <p class="item-amount">${item.amount}</p>
+      <i class="fas fa-chevron-down" data-id=${item.id}></i>
+  </div>
+  `;
+  //cartContent.appendChild(div);
 }
 /*
 =============
@@ -415,3 +531,46 @@ if (detail) {
     }
   });
 }
+// lưu các object của mỗi sản phẩm lên storage
+const saveProducts = (products) => {
+  localStorage.setItem("products", JSON.stringify(products));
+}
+const saveProductsTotal = (total) => {
+  localStorage.setItem("total", JSON.stringify(total));
+}
+const getProduct = (id) => {
+  // lấy hết all object sp về từ storage
+  // sau đó parse về dạng JSON
+  let products = JSON.parse(localStorage.getItem("products"));
+  console.log("test 11: ");
+  console.log(products);
+  // test thử nếu không phải dạng JSON thì nó ntn :)))
+  let productss = localStorage.getItem("products");
+  console.log("test 12: " + productss);
+  // tìm trong các object sản phẩm lấy về từ storage
+  // lấy ra 1 object sản phẩm có id giống với id người dùng vừa click
+  return products.find(product => product.id === id);
+}
+// array cart lúc này chứa các object mà người dùng vừa click
+// lưu lên storage các object sản phẩm mà người dùng vừa click or mua
+const saveCart = (cart) => {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+/*
+=============
+Load Category Products
+=============
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  getProducts().then(products => {
+    console.log(products);
+    displayProductItems(products);
+    displayProductItemsTop(products);
+    displayProductItemsSearch(products);
+    displayProductItemsFilter(products);
+    // lưu các object sản phẩm đọc từ .json lên storage
+    saveProducts(products);
+  }).then(() => {
+    getBagButtons();
+  });
+});
