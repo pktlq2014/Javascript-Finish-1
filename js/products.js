@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   displayProductItems(products);
   displayProductItemsTop(products);
   displayProductItemsSearch(products);
+  
 });
 var render_lists = function (lists) {
   displayProductItems(lists);
