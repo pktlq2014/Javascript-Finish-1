@@ -391,7 +391,7 @@ const getBagButtons = () => {
       // mỗi lần người dùng click thêm sp vào
       // giỏ hàng, nó sẽ tạo ra 1 thẻ div
       // sau đó thêm vào làm con của cart-content
-      addCartItem(cartItem);
+      //addCartItem(cartItem);
       // show the cart
       // this.showCart();
     });
@@ -424,28 +424,6 @@ setCartValues = (item) => {
   cart_items.innerText = itemsTotal;
   //console.log(parseFloat(tempTotal.toFix(2)));
   saveProductsTotal(parseFloat(tempTotal.toFixed(2)));
-}
-const addCartItem = (item) => {
-  const div = document.createElement('div');
-  div.classList.add('cart-item');
-  div.innerHTML = `
-  <img src="${item.image}" alt="product" class=""/>
-
-
-  <div class="item-list">
-      <h4 class="">${item.title}</h4>
-      <h5 class="">$${item.price}</h5>
-      <span class="remove-item" data-id=${item.id}>remove</span>
-  </div>
-
-
-  <div class="item-value">
-      <i class="fas fa-chevron-up" data-id=${item.id}></i>
-      <p class="item-amount">${item.amount}</p>
-      <i class="fas fa-chevron-down" data-id=${item.id}></i>
-  </div>
-  `;
-  //cartContent.appendChild(div);
 }
 /*
 =============
@@ -535,6 +513,9 @@ if (detail) {
 const saveProducts = (products) => {
   localStorage.setItem("products", JSON.stringify(products));
 }
+const saveTotal = (totalProduct) => {
+  localStorage.setItem("totalProduct", JSON.stringify(totalProduct));
+}
 const saveProductsTotal = (total) => {
   localStorage.setItem("total", JSON.stringify(total));
 }
@@ -563,6 +544,7 @@ Load Category Products
  */
 document.addEventListener("DOMContentLoaded", () => {
   getProducts().then(products => {
+    console.log("|||");
     console.log(products);
     displayProductItems(products);
     displayProductItemsTop(products);
