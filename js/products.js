@@ -120,7 +120,7 @@ const displayProductItems = (items) => {
   
         <ul>
           <li>
-            <a href="./product.html" data-tip="Quick View" data-place="left">
+            <a href="./product.html" class="watch_product" data-id=${product.id} data-tip="Quick View" data-place="left">
               <i class="fas fa-eye"></i>
             </a>
           </li>
@@ -315,11 +315,21 @@ const displayProductItemsFilter = (products) => {
 }
 
 
+const watch_product = [];
 const getBagButtons = () => {
   // id của nút add to cart
   const buttons = [...document.querySelectorAll(".product__btn")];
+  const buttonss = [...document.querySelectorAll(".watch_product")];
   console.log("test 5: ");
   console.log(buttons);
+  buttonss.forEach(button => {
+    var id = button.dataset.id;
+    button.addEventListener("click", event => {
+      var cartItem = { ...getProduct(id), amount: 1 };
+      watch_product.push(cartItem);
+      saveCartWatchProduct(watch_product);
+    });
+  });
   // buttonsDOM là 1 array rỗng
   // gán array chứa các class của các button này vào array rỗng
   buttonsDOM = buttons;
@@ -513,6 +523,9 @@ if (detail) {
 // lưu các object của mỗi sản phẩm lên storage
 const saveProducts = (products) => {
   localStorage.setItem("products", JSON.stringify(products));
+}
+const saveCartWatchProduct = (watch_product) => {
+  localStorage.setItem("watch_product", JSON.stringify(watch_product));
 }
 const saveTotal = (totalProduct) => {
   localStorage.setItem("totalProduct", JSON.stringify(totalProduct));
