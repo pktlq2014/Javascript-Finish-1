@@ -120,7 +120,7 @@ const displayProductItems = (items) => {
   
         <ul>
           <li>
-            <a data-tip="Quick View" data-place="left">
+            <a href="./product.html" data-tip="Quick View" data-place="left">
               <i class="fas fa-eye"></i>
             </a>
           </li>
@@ -227,7 +227,7 @@ const displayProductItemsTop = (items) => {
 
       <ul>
         <li>
-          <a data-tip="Quick View" data-place="left">
+          <a href="./product.html" data-tip="Quick View" data-place="left">
             <i class="fas fa-eye"></i>
           </a>
         </li>
@@ -422,6 +422,7 @@ setCartValues = (item) => {
   console.log(itemsTotal);
   // tổng số lương all sp hiển thị trong giỏ hàng t in ra nè
   cart_items.innerText = itemsTotal;
+  saveProductsAmount(itemsTotal);
   //console.log(parseFloat(tempTotal.toFix(2)));
   saveProductsTotal(parseFloat(tempTotal.toFixed(2)));
 }
@@ -518,6 +519,9 @@ const saveTotal = (totalProduct) => {
 }
 const saveProductsTotal = (total) => {
   localStorage.setItem("total", JSON.stringify(total));
+}
+const saveProductsAmount = (amount) => {
+  localStorage.setItem("amount", JSON.stringify(amount));
 }
 const getProduct = (id) => {
   // lấy hết all object sp về từ storage

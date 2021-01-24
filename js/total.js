@@ -54,6 +54,10 @@ const displayProductItemsCart = (carts) => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".cart-items").innerText = localStorage.getItem("amount");
+
+
+
     console.log(localStorage.getItem("total"));
     var price = parseInt(localStorage.getItem("total"));
     document.querySelector(".new__price_total").innerText = `${price}$`;
