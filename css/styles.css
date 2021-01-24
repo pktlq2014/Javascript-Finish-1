@@ -3140,10 +3140,12 @@ cart.html
   padding-bottom: 4rem;
   margin: 3rem 0;
 }
-
+.check__shipping {
+  font-size: 2rem;
+}
 .continue__shopping a:link,
 .continue__shopping a:visited {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 1.2rem 3rem;
   color: var(--black);
   text-transform: uppercase;
@@ -3169,8 +3171,8 @@ cart.html
 }
 
 .cart__totals h3 {
-  font-weight: 500;
-  font-size: 1.8rem;
+  font-weight: 800;
+  font-size: 2rem;
   margin-bottom: 1.6rem;
 }
 
@@ -3184,7 +3186,8 @@ cart.html
 
 .cart__totals li {
   border: 1px solid var(--primaryColor);
-  padding: 1.4rem 0.5rem;
+  padding: 1.5rem 0.5rem;
+  font-size: 2rem;
   position: relative;
 }
 
@@ -3199,7 +3202,7 @@ cart.html
 
 .cart__totals a:link,
 .cart__totals a:visited {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 1.2rem 3rem;
   color: var(--black);
   text-transform: uppercase;
