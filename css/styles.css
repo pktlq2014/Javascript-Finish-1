@@ -1022,6 +1022,9 @@ input:valid ~ span:after {
 .filter .origin h1 {
   font-size: 1.75rem;
 }
+.width_parent {
+  width: 100%;
+}
 .title__container {
   display: flex;
   padding: 1rem 1rem;
@@ -1468,6 +1471,14 @@ span.dot::before {
 .latest__products .glide__arrow--right,
 .related__products .glide__arrow--right {
   right: 0;
+}
+
+.margin_bottom-15 {
+  margin-bottom: 6rem;
+}
+.padding_bottom-15 {
+  margin: 0 5rem 0 5rem;
+  padding-bottom: 6rem;
 }
 
 .latest__products .glide__arrow i,
