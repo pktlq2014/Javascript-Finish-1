@@ -52,6 +52,14 @@ const displayProductItemsCart = (carts) => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    const proceed_checkout = document.querySelector(".proceed_checkout");
+    proceed_checkout.addEventListener("click", (e) => {
+        confirm("Evolving Functions!!!");
+    });
+
+
+
+
     document.querySelector(".cart-items").innerText = localStorage.getItem("amount");
 
 
