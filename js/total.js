@@ -55,7 +55,17 @@ const displayProductItemsCart = (carts) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log(localStorage.getItem("total"));
-    document.querySelector(".new__price_total").innerText = localStorage.getItem("total");
+    var price = parseInt(localStorage.getItem("total"));
+    document.querySelector(".new__price_total").innerText = `${price}$`;
+
+
+
+    document.querySelector(".fee_shipping").innerText = "7$";
+
+
+
+    price += 7;
+    document.querySelector(".new__price_total_finish").innerText = `${price}$`; 
 
 
 

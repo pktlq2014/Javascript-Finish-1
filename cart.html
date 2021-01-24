@@ -30,76 +30,274 @@
 </head>
 
 <body>
+    <!-- Header -->
     <header id="header" class="header">
         <div class="navigation">
-            <div class="container">
+            <div class="">
                 <nav class="nav">
                     <div class="nav__hamburger">
                         <i class="fas fa-bars"></i>
                     </div>
 
+
+
                     <div class="nav__logo">
-                        <a href="/" class="scroll-link">
-                            PHONE
+                        <a href="#header" class="scroll-link">
+                            <img src="./images/logostore.png" alt="">
                         </a>
                     </div>
 
+
+
                     <div class="nav__menu">
                         <div class="menu__top">
-                            <span class="nav__category">PHONE</span>
-                            <a href="#" class="close__toggle">
+                            <span class="nav__category">
+                                <img src="./images/logostore.png" alt="">
+                            </span>
+                            <a class="close__toggle">
                                 <i class="fas fa-times"></i>
                             </a>
                         </div>
+
+
+
                         <ul class="nav__list">
-                            <li class="nav__item">
-                                <a href="/" class="nav__link">Home</a>
+                            <li class="nav__item" class="nav__link scroll-link">
+                                <a href="./index.html">Store</a>
                             </li>
                             <li class="nav__item">
-                                <a href="#" class="nav__link">Products</a>
+                                <a href="#header" class="nav__link scroll-link">Home</a>
                             </li>
                             <li class="nav__item">
-                                <a href="#" class="nav__link">Blog</a>
+                                <a href="#products" class="nav__link scroll-link">Products</a>
                             </li>
                             <li class="nav__item">
-                                <a href="#" class="nav__link">Contact</a>
+                                <a href="#team" class="nav__link scroll-link">Team</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#questions" class="nav__link scroll-link">Questions</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#news" class="nav__link scroll-link">News</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#contact" class="nav__link scroll-link">Contact</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="nav__icons">
-                        <a href="#" class="icon__item">
-                            <i class="fas fa-user"></i>
-                        </a>
 
-                        <a href="#" class="icon__item">
-                            <i class="fas fa-search"></i>
-                        </a>
 
-                        <a href="#" class="icon__item">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span id="cart__total">0</span>
+                    <div class="grid wide">
+                        <nav class="nav__navbar hide-on-tablet-mobile">
+                            <ul class="header__navbar-list">
+                                <li class="header__navbar-item header__navbar-item--saparate">
+                                    downloads App
+                                    <div class="dot__right"></div>
+                                    <div class="header__qr">
+                                        <img class="header__qr--img" src="./images/QRcode.png">
+                                        <div class="header__qr--apps">
+                                            <a class="header__qr-link"><img class="header__qr--download"
+                                                    src="./images/google_play.png"></a>
+                                            <a class="header__qr-link"><img class="header__qr--download"
+                                                    src="./images/AppStore.png"></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+
+
+                            <ul class="header__navbar-list">
+                                <li class="header__navbar-item header__navbar-item-hover">
+                                    <a class="header-navbar-icon-link"><i class="fa fa-bell"></i>
+                                        Thông Báo
+                                    </a>
+                                    <div class="header__notify">
+                                        <header class="header__notify-header">
+                                            <h3>Thông báo mới nhất</h3>
+                                        </header>
+                                        <ul class="header__notify-list">
+                                            <li class="header__notify-item header__notify-item-viewed">
+                                                <a class="header__notify-link">
+                                                    <img class="header__notify-img" src="./images/sale.jpg">
+                                                    <div class="header__notify-info">
+                                                        <span class="header__notify-name">
+                                                            Chương trình khách hàng thân thiết
+                                                        </span>
+                                                        <span class="header__notify-description">
+                                                            Để cảm ơn sự ủng hộ và yêu thích của khách hàng đối với
+                                                            chúng tôi, chương trình khách hàng thân thiết đã ra mắt.
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="header__notify-item header__notify-item-viewed">
+                                                <a class="header__notify-link">
+                                                    <img class="header__notify-img" src="./images/sale.jpg">
+                                                    <div class="header__notify-info">
+                                                        <span class="header__notify-name">
+                                                            Chương trình khách hàng thân thiết
+                                                        </span>
+                                                        <span class="header__notify-description">
+                                                            Để cảm ơn sự ủng hộ và yêu thích của khách hàng đối với
+                                                            chúng tôi, chương trình khách hàng thân thiết đã ra mắt.
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="header__notify-item header__notify-item-viewed">
+                                                <a class="header__notify-link">
+                                                    <img class="header__notify-img" src="./images/sale.jpg">
+                                                    <div class="header__notify-info">
+                                                        <span class="header__notify-name">
+                                                            Chương trình khách hàng thân thiết
+                                                        </span>
+                                                        <span class="header__notify-description">
+                                                            Để cảm ơn sự ủng hộ và yêu thích của khách hàng đối với
+                                                            chúng tôi, chương trình khách hàng thân thiết đã ra mắt.
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="header__notify-item header__notify-item-viewed">
+                                                <a class="header__notify-link">
+                                                    <img class="header__notify-img" src="./images/sale.jpg">
+                                                    <div class="header__notify-info">
+                                                        <span class="header__notify-name">
+                                                            Chương trình khách hàng thân thiết
+                                                        </span>
+                                                        <span class="header__notify-description">
+                                                            Để cảm ơn sự ủng hộ và yêu thích của khách hàng đối với
+                                                            chúng tôi, chương trình khách hàng thân thiết đã ra mắt.
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="header__notify-item header__notify-item-viewed">
+                                                <a class="header__notify-link">
+                                                    <img class="header__notify-img" src="./images/sale.jpg">
+                                                    <div class="header__notify-info">
+                                                        <span class="header__notify-name">
+                                                            Chương trình khách hàng thân thiết
+                                                        </span>
+                                                        <span class="header__notify-description">
+                                                            Để cảm ơn sự ủng hộ và yêu thích của khách hàng đối với
+                                                            chúng tôi, chương trình khách hàng thân thiết đã ra mắt.
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="header__notify-item header__notify-item-viewed">
+                                                <a class="header__notify-link">
+                                                    <img class="header__notify-img" src="./images/sale.jpg">
+                                                    <div class="header__notify-info">
+                                                        <span class="header__notify-name">
+                                                            Chương trình khách hàng thân thiết
+                                                        </span>
+                                                        <span class="header__notify-description">
+                                                            Để cảm ơn sự ủng hộ và yêu thích của khách hàng đối với
+                                                            chúng tôi, chương trình khách hàng thân thiết đã ra mắt.
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="header__notify-item header__notify-item-viewed">
+                                                <a class="header__notify-link">
+                                                    <img class="header__notify-img" src="./images/sale.jpg">
+                                                    <div class="header__notify-info">
+                                                        <span class="header__notify-name">
+                                                            Chương trình khách hàng thân thiết
+                                                        </span>
+                                                        <span class="header__notify-description">
+                                                            Để cảm ơn sự ủng hộ và yêu thích của khách hàng đối với
+                                                            chúng tôi, chương trình khách hàng thân thiết đã ra mắt.
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="header__notify-item header__notify-item-viewed">
+                                                <a class="header__notify-link">
+                                                    <img class="header__notify-img" src="./images/sale.jpg">
+                                                    <div class="header__notify-info">
+                                                        <span class="header__notify-name">
+                                                            Chương trình khách hàng thân thiết
+                                                        </span>
+                                                        <span class="header__notify-description">
+                                                            Để cảm ơn sự ủng hộ và yêu thích của khách hàng đối với
+                                                            chúng tôi, chương trình khách hàng thân thiết đã ra mắt.
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="header__notify-item header__notify-item-viewed">
+                                                <a class="header__notify-link">
+                                                    <img class="header__notify-img" src="./images/sale.jpg">
+                                                    <div class="header__notify-info">
+                                                        <span class="header__notify-name">
+                                                            Chương trình khách hàng thân thiết
+                                                        </span>
+                                                        <span class="header__notify-description">
+                                                            Để cảm ơn sự ủng hộ và yêu thích của khách hàng đối với
+                                                            chúng tôi, chương trình khách hàng thân thiết đã ra mắt.
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+
+
+                                        <div class="header__notify-footer">
+                                            <a class="header__notify-footer-link" href="#header">Xem Tất Cả</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
+                                <li class="header__navbar-signed header__navbar-item login">Đăng nhập</li>
+                            </ul>
+                        </nav>
+
+
+                        <a href="./cart.html" class="cart-btn">
+                            <span class="nav-icon">
+                                <i class="fas fa-cart-plus"></i>
+                            </span>
+                            <div class="cart-items">0</div>
+                            <!-- <span class="new__price_total">0</span> -->
                         </a>
                     </div>
                 </nav>
             </div>
         </div>
-
-        <div class="page__title-area">
-            <div class="container">
-                <div class="page__title-container">
-                    <ul class="page__titles">
-                        <li>
-                            <a href="/">
-                                <i class="fas fa-home"></i>
-                            </a>
-                        </li>
-                        <li class="page__title">Cart</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </header>
+    <!-- End Header -->
 
     <main id="main">
         <section class="section cart__area">
@@ -162,7 +360,7 @@
 
                         <div class="cart-btns">
                             <div class="continue__shopping">
-                                <a href="/">Continue Shopping</a>
+                                <a href="./index.html">Continue Shopping</a>
                             </div>
                             <div class="check__shipping">
                                 <input type="checkbox">
@@ -175,16 +373,16 @@
                             <ul>
                                 <li>
                                     Subtotal
-                                    <span class="new__price">$250.99</span>
+                                    <span class="new__price_total">$250.99</span>
                                 </li>
                                 <li>
                                     Shipping
-                                    <span>$0</span>
+                                    <span class="fee_shipping">$0</span>
                                 </li>
                                 <li>
-                                        <h3></h3>Total
-                                            <span class="new__price_total">0</span>
-                                        </h3>
+                                    <h3></h3>Total
+                                    <span class="new__price_total_finish">0</span>
+                                    </h3>
                                 </li>
                             </ul>
                             <a href="">PROCEED TO CHECKOUT</a>
@@ -195,11 +393,21 @@
         </section>
     </main>
 
+    <!-- --------------------------- Footer ---------------------------------------- -->
     <!-- Footer -->
-    <footer id="footer" class="section footer">
+    <!--insert 3-->
+    <footer id="contact">
         <div class="container">
+            <div class="back-to-top">
+                <a href="#header">
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+            </div>
+
+
+
             <div class="footer__top">
-                <div class="footer-top__box">
+                <div class="footer-top__box" data-aos="fade-right" data-aos-delay="100">
                     <h3>EXTRAS</h3>
                     <a href="#">Brands</a>
                     <a href="#">Gift Certificates</a>
@@ -207,7 +415,10 @@
                     <a href="#">Specials</a>
                     <a href="#">Site Map</a>
                 </div>
-                <div class="footer-top__box">
+
+
+
+                <div class="footer-top__box" data-aos="fade-right" data-aos-delay="200">
                     <h3>INFORMATION</h3>
                     <a href="#">About Us</a>
                     <a href="#">Privacy Policy</a>
@@ -215,7 +426,10 @@
                     <a href="#">Contact Us</a>
                     <a href="#">Site Map</a>
                 </div>
-                <div class="footer-top__box">
+
+
+
+                <div class="footer-top__box" data-aos="fade-right" data-aos-delay="300">
                     <h3>MY ACCOUNT</h3>
                     <a href="#">My Account</a>
                     <a href="#">Order History</a>
@@ -223,49 +437,43 @@
                     <a href="#">Newsletter</a>
                     <a href="#">Returns</a>
                 </div>
-                <div class="footer-top__box">
+
+
+
+                <div class="footer-top__box" data-aos="fade-right" data-aos-delay="400">
                     <h3>CONTACT US</h3>
                     <div>
                         <span>
                             <i class="fas fa-map-marker-alt"></i>
                         </span>
-                        42 Dream House, Dreammy street, 7131 Dreamville, USA
+                        42 Dream House, Dreammy street, 7131 Dreamville, USA.
                     </div>
                     <div>
                         <span>
                             <i class="fas fa-envelope-square"></i>
                         </span>
-                        company@gmail.com
+                        company@gmail.com.
                     </div>
                     <div>
                         <span>
                             <i class="fas fa-phone-square-alt"></i>
                         </span>
-                        456-456-4512
+                        456-456-4512.
                     </div>
                     <div>
                         <span>
                             <i class="far fa-paper-plane"></i>
                         </span>
-                        Dream City, USA
+                        Dream City, USA.
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer__bottom">
-            <div class="footer-bottom__box">
-
-            </div>
-            <div class="footer-bottom__box">
-
-            </div>
-        </div>
-        </div>
     </footer>
     <!-- End Footer -->
-    <!-- Go To -->
 
-    <a href="#header" class="goto-top scroll-link">
+    <!-- Go To -->
+    <a href="#header" id="vidBtn" class="goto-top scroll-link">
         <i class="fas fa-arrow-up"></i>
     </a>
 
