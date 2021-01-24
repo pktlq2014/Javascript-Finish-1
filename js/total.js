@@ -16,8 +16,6 @@ const displayProductItemsCart = (carts) => {
         </td>
         <td class="product__name">
             <a href="#">${cart.title}</a>
-            <br><br>
-            <small>White/6.25</small>
         </td>
         <td class="product__price">
             <div class="price">
