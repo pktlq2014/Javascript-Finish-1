@@ -465,7 +465,7 @@ let picActive = 1;
       // slice(3) là lấy từ vị trí 3 của id trở đi
       const id = target.id.slice(3);
       console.log(id);
-      changeImage(`./images/products/iPhone/iphone${id}.jpeg`, id);
+      changeImage(`./images/laptop${id}.jpg`, id);
     });
   }
 });

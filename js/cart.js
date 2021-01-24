@@ -114,5 +114,20 @@ const saveProductsTotalWatch = (total) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".cart-items").innerText = localStorage.getItem("amount");
+    var products = JSON.parse(localStorage.getItem("watch_product"));
+    products.forEach(product => {
+        var image = "./." + product.image;
+       // console.log(image);
+       // $("#image_product_watch").attr("src", image);
+       document.querySelector(".image_product_watch").src = image;
+       document.querySelector(".title_product").innerText = product.title;
+       document.querySelector(".price_product").innerText = product.price;
+       document.querySelector(".priceOld_product").innerText = product.priceOld;
+       document.querySelector(".origin_product").innerText = product.origin;
+       document.querySelector(".category_product").innerText = product.category; 
+    });
     getBagButtonsCart();
 });
+
+
+
