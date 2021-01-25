@@ -2752,7 +2752,7 @@ Product Details
 
 .input-counter div {
   display: flex;
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .input-counter li span {
@@ -2761,8 +2761,8 @@ Product Details
   margin-right: 1rem;
 }
 
-.minus-btn,
-.plus-btn {
+.fa-minus,
+.fa-plus {
   display: inline-block;
   border: 1px solid var(--primaryColor);
   padding: 1rem 1.5rem;
@@ -2771,17 +2771,19 @@ Product Details
   cursor: pointer;
 }
 
-.plus-btn {
+.fa-plus {
+  color: blue;
   border-left-color: transparent;
 }
 
-.minus-btn {
+.fa-minus {
+  color: red;
   border-right-color: transparent;
 }
 
 .counter-btn {
   width: 5rem;
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem 0 1rem 0;
   font-size: 2rem;
   text-align: center;
   border: 1px solid var(--primaryColor);
