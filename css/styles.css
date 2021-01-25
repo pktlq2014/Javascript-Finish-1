@@ -3094,9 +3094,7 @@ cart.html
   object-fit: contain;
 }
 
-.remove__cart-item i {
-  width: 1.6rem;
-  height: 1.6rem;
+.remove__cart-item {
   text-align: center;
   color: var(--grey2);
   transition: all 0.3s ease-in-out;
@@ -3188,7 +3186,7 @@ cart.html
   margin-left: 1rem;
 }
 
-.remove__cart-item:hover i {
+.remove__cart-item:hover {
   color: var(--orange);
 }
 

@@ -2,6 +2,41 @@ const product_parent = document.querySelector(".product_parent");
 
 
 
+const cartLogicProduct = () => {
+    product_parent.addEventListener("click", (event) => {
+        if (event.target.classList.contains("remove__cart-item")) {
+            console.log("|||123");
+            let removeItem = event.target;
+            let id = removeItem.dataset.id;
+            product_parent.removeChild(removeItem.parentElement.parentElement);
+            this.removeItemProduct(id);
+        }
+    });
+}
+
+
+
+
+const removeItemProduct = (id) => {
+    var cart = getProductCart();
+    console.log(cart);
+    cart = cart.filter(item => {
+        return item.id !== id;
+    });
+    let button = getSingleButton(id);
+    button.disabled = false;
+    button.innerText = "Add To Cart";
+}
+
+
+
+const getSingleButton = (id) => {
+
+}
+
+
+
+
 const displayProductItemsCart = (carts) => {
     let result = '';
     carts.forEach(cart => {
@@ -40,7 +75,7 @@ const displayProductItemsCart = (carts) => {
                 <span class="new__price">${total}$</span>
             </div>
             <a href="#" class="remove__cart-item" data-id=${cart.id}>
-                <i class="fas fa-trash-alt"></i>
+                Delete
             </a>
         </td>
             </tr>
@@ -75,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     price += 7;
-    document.querySelector(".new__price_total_finish").innerText = `${price}$`; 
+    document.querySelector(".new__price_total_finish").innerText = `${price}$`;
 
 
 
@@ -83,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(carts);
     //addCartItem(carts);
     displayProductItemsCart(carts);
+    cartLogicProduct();
 });
 const getProductCart = () => {
     let productCart = JSON.parse(localStorage.getItem("cart"));
