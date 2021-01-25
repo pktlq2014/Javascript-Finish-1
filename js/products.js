@@ -333,6 +333,7 @@ const getBagButtons = () => {
   // buttonsDOM là 1 array rỗng
   // gán array chứa các class của các button này vào array rỗng
   buttonsDOM = buttons;
+  setButtonsDOM(buttonsDOM);
   buttons.forEach(button => {
     // lấy ra dataset-id của 8 cái button 
     var id = button.dataset.id;
@@ -523,6 +524,9 @@ if (detail) {
 // lưu các object của mỗi sản phẩm lên storage
 const saveProducts = (products) => {
   localStorage.setItem("products", JSON.stringify(products));
+}
+const setButtonsDOM = (buttonsDOM) => {
+  localStorage.setItem("buttonsDOM", JSON.stringify(buttonsDOM));
 }
 const saveCartWatchProduct = (watch_product) => {
   localStorage.setItem("watch_product", JSON.stringify(watch_product));

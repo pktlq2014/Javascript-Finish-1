@@ -14,6 +14,44 @@ const cartLogicProduct = () => {
             product_parent.removeChild(removeItem.parentElement.parentElement);
             removeItemProduct(id);
         }
+        else if (event.target.classList.contains("fa-plus")) {
+            let addAmount = event.target;
+            let id = addAmount.dataset.id;
+            // tempItem tham chiếu tới cart nên khi tempItem
+            // thay đổi thì cart thay đổi theo
+            let tempItem = cartNow.find(item => item.id === id);
+            tempItem.amount += 1;
+            if (tempItem.amount <= 10) {
+                console.log("test 23: ");
+                console.log(tempItem);
+                saveCartProduct(cartNow);
+                setCartValuesProduct(cartNow);
+                displayProductItemsCart(cartNow);
+                // addAmount là thẻ i
+                // nextElementSibling là lấy nội dung thẻ bên dưới nó
+                // là thẻ p, sau đó gán lại số lượng nội dung của thẻ p
+                console.log("test 24: ");
+                console.log(addAmount.previousElementSibling);
+                addAmount.previousElementSibling.innerText = tempItem.amount;
+            }
+        }
+        else if (event.target.classList.contains("fa-minus")) {
+            let lowerAmount = event.target;
+            let id = lowerAmount.dataset.id;
+            let tempItem = cartNow.find(item => item.id === id);
+            tempItem.amount -= 1;
+            // nếu trong giỏ hàng còn sp
+            if (tempItem.amount > 0) {
+                saveCartProduct(cartNow);
+                setCartValuesProduct(cartNow);
+                displayProductItemsCart(cartNow);
+                lowerAmount.nextElementSibling.innerText = tempItem.amount;
+            }
+            else {
+                product_parent.removeChild(lowerAmount.parentElement.parentElement.parentElement.parentElement);
+                removeItemProduct(id);
+            }
+        }
     });
 }
 
@@ -26,7 +64,7 @@ const removeItemProduct = (id) => {
         return item.id !== id;
     });
     setCartValuesProduct(cartNow);
-
+    saveCartProduct(cartNow);
     let button = getSingleButton(id);
     button.disabled = false;
     button.innerText = "Add To Cart";
@@ -34,7 +72,7 @@ const removeItemProduct = (id) => {
 
 
 
-const setCartValuesProduct = (cart) => {
+const setCartValuesProduct = (cartNow) => {
     let tempTotal = 0;
     let itemsTotal = 0;
     // cart.forEach(item => {
@@ -43,7 +81,7 @@ const setCartValuesProduct = (cart) => {
     // });
     // array cart lúc này đã có object sp người dùng vừa click
     // mỗi 1 sp trong cart or trong giỏ hàng sẽ tính toán 1 lần
-    var total = cart.reduce((tempInitial, value) => {
+    var total = cartNow.reduce((tempInitial, value) => {
         //tempInitial += value.price * value.amount;
         itemsTotal += value.amount;
         // return tempInitial;
@@ -55,7 +93,7 @@ const setCartValuesProduct = (cart) => {
     document.querySelector(".fee_shipping").innerText = "7$";
     tempTotal += 7;
     new__price_total_finish.innerText = tempTotal;
-    if(tempTotal <= 7) {
+    if (tempTotal <= 7) {
         new__price_total_finish.innerText = 0;
     }
 }
@@ -63,7 +101,8 @@ const setCartValuesProduct = (cart) => {
 
 
 const getSingleButton = (id) => {
-
+    const buttonsDOM = JSON.parse(localStorage.getItem("buttonsDOM"));
+    return buttonsDOM.find(button => button.dataset.id === id);
 }
 
 
@@ -92,13 +131,9 @@ const displayProductItemsCart = (carts) => {
         <td class="product__quantity">
             <div class="input-counter">
                 <div>
-                    <span class="minus-btn" data-id=${cart.id}>
-                        <i class="fas fa-minus"></i>
-                    </span>
-                    <input type="text" min="1" value=${cart.amount} max="10" class="counter-btn">
-                    <span class="plus-btn" data-id=${cart.id}>
-                        <i class="fas fa-plus"></i>
-                    </span>
+                    <i class="fas fa-minus" data-id=${cart.id}></i>
+                        <p class="counter-btn">${cart.amount}</p>
+                    <i class="fas fa-plus" data-id=${cart.id}></i>
                 </div>
             </div>
         </td>
@@ -164,4 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const getProductCart = () => {
     let productCart = JSON.parse(localStorage.getItem("cart"));
     return productCart;
+}
+const saveCartProduct = (cart) => {
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
