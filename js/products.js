@@ -564,6 +564,7 @@ Load Category Products
 =============
  */
 document.addEventListener("DOMContentLoaded", () => {
+  cart_items.innerText = JSON.parse(localStorage.getItem("amount"));
   getProducts().then(products => {
     console.log("|||");
     console.log(products);

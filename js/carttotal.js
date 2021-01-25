@@ -65,6 +65,8 @@ const removeItemProduct = (id) => {
     });
     setCartValuesProduct(cartNow);
     saveCartProduct(cartNow);
+    var amount = 0;
+    setAmountProduct(amount);
     let button = getSingleButton(id);
     button.disabled = false;
     button.innerText = "Add To Cart";
@@ -202,4 +204,7 @@ const getProductCart = () => {
 }
 const saveCartProduct = (cart) => {
     localStorage.setItem('cart', JSON.stringify(cart));
+}
+const setAmountProduct = (amount) => {
+    localStorage.setItem("amount", JSON.stringify(amount))
 }
