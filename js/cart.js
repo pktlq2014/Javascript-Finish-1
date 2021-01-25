@@ -4,18 +4,16 @@ const product__btn_product = document.querySelector(".product__btn_product");
 
 
 
-
-
-const getBagButtonsCart = () => {
+const getBagButtonsCart = (temp) => {
     product__btn_product.addEventListener("click", event => {
-        //event.target.innerText = "In Cart";
+        event.target.innerText = "In Cart";
         // khi users click vào sản phẩm này 
         // nghĩa là sản phẩm này sẽ được thêm vào trong giỏ hàng
         // thì sau đó user sẽ không thể thêm sp này vào 
         // giỏ hàng được nữa, vì vậy phải vô hiệu
         // hóa cái button của sản phẩm này sau khi 
         // thêm vào giỏ hàng xong
-        //event.target.disabled = true;
+        event.target.disabled = true;
 
 
         // get product from products
@@ -107,7 +105,7 @@ const saveProductsAmountWatch = (amount) => {
 }
 const saveProductsTotalWatch = (total) => {
     localStorage.setItem("total", JSON.stringify(total));
-  }
+}
 
 
 
@@ -117,14 +115,14 @@ document.addEventListener("DOMContentLoaded", () => {
     var products = JSON.parse(localStorage.getItem("watch_product"));
     products.forEach(product => {
         var image = "./." + product.image;
-       // console.log(image);
-       // $("#image_product_watch").attr("src", image);
-       document.querySelector(".image_product_watch").src = image;
-       document.querySelector(".title_product").innerText = product.title;
-       document.querySelector(".price_product").innerText = `${product.price}$`;
-       document.querySelector(".priceOld_product").innerText = `${product.priceOld}$`;
-       document.querySelector(".origin_product").innerText = product.origin;
-       document.querySelector(".category_product").innerText = product.category; 
+        // console.log(image);
+        // $("#image_product_watch").attr("src", image);
+        document.querySelector(".image_product_watch").src = image;
+        document.querySelector(".title_product").innerText = product.title;
+        document.querySelector(".price_product").innerText = `${product.price}$`;
+        document.querySelector(".priceOld_product").innerText = `${product.priceOld}$`;
+        document.querySelector(".origin_product").innerText = product.origin;
+        document.querySelector(".category_product").innerText = product.category;
     });
     getBagButtonsCart();
 });
